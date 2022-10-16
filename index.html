@@ -29,6 +29,32 @@ layout: default
 
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#000">
+
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content=
+          "width=device-width, initial-scale=1.0" />
+      <title>Gradient Text</title>
+      <style>
+          body {
+              background: rgb(39, 39, 39);
+          }
+    
+          h1 {
+              position: absolute;
+              top: 40%;
+              left: 40%;
+    
+              font-size: 40px;
+              font-family: Arial, Helvetica, sans-serif;
+              background: linear-gradient(to right, #f32170,
+                      #ff6b08, #cf23cf, #eedd44);
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+          }
+      </style>
+  </head>
+    
   </head>
 
   <body class="">
@@ -37,8 +63,8 @@ layout: default
     <div class="flex h-screen">
   <div class="lg:w-2/3 mx-4 m-auto lg:m-auto">
     <div class="">
-      <h1 class="text-5xl font-extrabold tracking-tighter">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-my-orange to-my-pink text-5xl font-extrabold">Zach Holman!</span>
+      <h1>
+        Christos Kourris
       </h1>
 
       <div class="text-gray-700 text-lg font-light leading-loose">
