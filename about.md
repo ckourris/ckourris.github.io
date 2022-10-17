@@ -17,4 +17,4 @@ Besides physics, I happily have other things occupying my mind, which I often ap
 
 christos.kourris@tu(minus-symbol-here)dresden.de
 
-This is a test. you can [get the PDF](https://github.com/ckourris/ckourris.github.io/blob/e7c3c24ba813c2188cb8c39e9e91d5024c6648a4/pdf_files/test.pdf) directly.
+This is a test. you can [get the PDF](https://github.com/ckourris/ckourris.github.io/pdf_files/test.pdf) directly.
