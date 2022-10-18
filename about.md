@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About2
+permalink: /about2/
 ---
 
 I am a PhD student at TU Dresden, working directly under Prof. Matthias Vojta. My main research interests are strongly correlated quantum systems, frustrated magnetism, and the application of geometry and topology in solid state physics. 
