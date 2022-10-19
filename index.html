@@ -2,97 +2,17 @@
 layout: default
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title> <strong> <p style="font-size: 26px">Christos Kourris</p></strong></title>
-
-    <meta name="author" content="Christos" />
-    <meta name="twitter:site" content="@ChristosKourris" />
-    <meta
-      name="description"
-      content="Written pieces, notes, talks, and other bits by Christos Kourris."
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:title" content="Christos Kourris" />
-
-    <meta property="og:image" content="/images/front.png" />
-
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
-    <link rel="alternate" type="application/rss+xml" href="//zachholman.com/atom.xml" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/./dist/index.df30bf08e974d9a5322c.css">
-    <link rel="stylesheet" href="/webfonts/ss-social.css" type="text/css" />
-
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="theme-color" content="#000">
-
-      <meta charset="UTF-8" />
-      <meta name="viewport" content=
-          "width=device-width, initial-scale=1.0" />
-      <title>Gradient Text</title>
-      <style>
-          body {
-              background: rgb(255, 255, 255);
-          }
-    
-          h1 {
-              font-size: 40px;
-              font-family: Arial, Helvetica, sans-serif;
-              background: linear-gradient(to right, #f32170,
-                      #ff6b08, #cf23cf, #eedd44);
-              -webkit-text-fill-color: transparent;
-              -webkit-background-clip: text;
-          }
-      </style>
-    
-  </head>
-
-  <body class="">
-    
-
-    <div class="flex h-screen">
-  <div class="lg:w-2/3 mx-4 m-auto lg:m-auto">
-    <div class="">
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">    
       
-      <div class="text-gray-700 text-lg font-light leading-loose">
-        <strong class="font-bold text-gray-700 text-md">Hallo!</strong> 
-        I am a PhD research student at in the group of <a href = "https://tu-dresden.de/mn/physik/itp/tfp">Prof. Matthias Vojta</a>.
-        I was previously a summer research student and later master's student at <a href = "https://www.physics.ox.ac.uk/research/group/condensed-matter-theory">
-          Oxford</a>. I spend most of my time thinking about strongly correlated quantum many body systems. 
-          <br>This is a site for my work, and other things I often think about.
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.content | truncatewords:40}}
       </div>
-    </div>
-    
-
-
-    <div class="my-8 lg:text-right">
-      <ul class="text-2xl tracking-tight nav-links">
-        <li class="lg:inline">
-          <a href="/about" class="md:px-6 py-4">About</a>
-        </li>
-        <li class="lg:inline">
-          <a href="/test" class="md:px-6 py-4">Research</a>
-        </li>
-        <li class="lg:inline">
-          <a href="/notes" class="md:px-6 py-4">Notes</a>
-        </li>
-        <li class="lg:inline">
-          <a href="/other" class="md:px-6 py-4">Other</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+      
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
 </div>
-  </body>
-
-  <script
-    type="text/javascript"
-    src="//gaug.es/track.js"
-    id="gauges-tracker"
-    data-site-id="4d628b21ea814913ee00000b"
-  ></script>
-</html>
