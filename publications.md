@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Publications
-permalink: /publications/
+title: Research
+permalink: /research/
 ---
 - Test, 2018 [post](https://arxiv.org/)
 -- Test
