@@ -3,117 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- =====================================================
-    EDIT THIS: browser tab title and search engine snippet
-  ===================================================== -->
-  <title>Christos — Theoretical Physicist</title>
+  <title>Christos Kourris — Theoretical Physicist</title>
   <meta name="description" content="Personal site of Christos, theoretical physicist." />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="container">
 
-    <!-- =================================================
-      NAVIGATION — same on every page.
-      "active" class highlights the current page.
-      Copy this <nav> block to every other .html file.
-    ================================================= -->
     <nav>
-      <a class="site-name" href="index.html">Your Name</a>
+      <a class="site-name" href="index.html">Christos Kourris</a>
       <ul>
         <li><a href="index.html" class="active">About</a></li>
         <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="writing.html">Writing</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- =================================================
-      HERO — the first thing visitors see.
-      Edit the h1, subtitle, and links below.
-    ================================================= -->
     <section class="hero">
-    <img class="hero-photo" src="portrait.jpg" alt="Your Name" />
-    <div>
-      <h1>Theoretical physicist.</h1>
-      <p class="subtitle">
-        I recently completed my PhD in theoretical physics at TU Dresden. 
-        My research focused on correlated many-body phases. I am now looking 
-        for opportunities outside academia where I can use my analytical and 
-        numerical problem-solving skills. 
-      </p>
-      <div class="hero-links">
-        <a href="#">CV ↗</a>
-        <a href="#">arXiv ↗</a>
-        <a href="#">GitHub ↗</a>
+      <!-- EDIT: add your photo as photo.jpg in the same folder, or remove this line -->
+      <img class="hero-photo" src="portrait.jpg" alt="christos" />
+      <div>
+        <h1>Theoretical physicist.</h1>
+        <!-- EDIT: your 2–3 sentence intro -->
+        <p class="subtitle">
+           I recently completed my PhD in theoretical physics at TU Dresden. My research focused on correlated many-body phases. I am now looking for opportunities outside academia where I can use my analytical and numerical problem-solving skills.
+           <br>
+           <br>
+           You can read about my physics research under the "Research" tab, and about other projects under the "Projects" tab.
+           <br>
+           <br>
+           As of August 2026, this site is still under construction.
+        </p>
+        <!-- EDIT: replace # with real URLs -->
+        <div class="hero-links">
+          <a href="#">CV ↗</a>
+          <a href="https://arxiv.org/search/cond-mat?searchtype=author&query=Kourris,+C" target="_blank">arXiv ↗</a>
+          <a href="https://github.com/ckourris" target="_blank">GitHub ↗</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-    <!-- =================================================
-      RECENT WRITING — a short list linking to your posts.
-      Add or remove <li> entries as needed.
-    ================================================= -->
     <p class="section-label">Recent writing</p>
     <ul class="post-list">
-
-      <!-- Each entry: title links to the post, date on the right -->
       <li>
-        <span class="post-title">
-          <a href="posts/post-title-here.html">A note on ...</a>
-        </span>
+        <span class="post-title"><a href="posts/post-template.html">Post title here</a></span>
         <span class="post-date">Jun 2025</span>
       </li>
-
       <li>
-        <span class="post-title">
-          <a href="posts/estimation.html">Post 1</a>
-        </span>
+        <span class="post-title"><a href="posts/post-template.pdf" target="_blank">Another post ↗</a></span>
         <span class="post-date">Apr 2025</span>
       </li>
-
-      <!-- To link to a PDF instead of an HTML post: -->
-      <li>
-        <span class="post-title">
-          <a href="posts/thesis-plain.pdf" target="_blank">My PhD thesis, explained plainly ↗</a>
-        </span>
-        <span class="post-date">Feb 2025</span>
-      </li>
-
     </ul>
 
-    <!-- =================================================
-      RESEARCH HIGHLIGHTS — 2–4 cards for key work.
-      Edit the label (e.g. "PhD thesis", "Paper · 2024")
-      and the card-title for each entry.
-    ================================================= -->
-    <p class="section-label">Research highlights</p>
+    <p class="section-label">Research & projects</p>
     <div class="research-grid">
-
       <div class="research-card">
         <p class="card-label">PhD thesis</p>
-        <p class="card-title">Your thesis title goes here</p>
+        <p class="card-title">Kondo-driven quantum phase transitions<br> in frustrated systems</p>
       </div>
-
       <div class="research-card">
-        <p class="card-label">Preprint · 2024</p>
-        <p class="card-title">Your most recent paper title</p>
+        <p class="card-label">EDA Project · 2026</p>
+        <p class="card-title">Film: Between Art and Industry</p>
       </div>
-
-      <!-- Add more cards, or remove one — the grid adjusts -->
-
     </div>
 
-    <!-- FOOTER — edit location if you like -->
     <footer>
       <span>ckourris.github.io</span>
-      <span>... (Location)</span>
+      <span>(Location)</span>
     </footer>
 
-  </div><!-- end .container -->
-
+  </div>
 </body>
 </html>

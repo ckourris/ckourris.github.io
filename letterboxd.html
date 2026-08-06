@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Film: Between Art and Industry</title>
+  <meta name="description" content="A data analysis of Letterboxd ratings, budgets, and revenues -- exploring the tension between critical reception and commercial success." />
+  <link rel="stylesheet" href="style.css" />
+
+
+  <style>
+  .insights-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3.5rem 0 2.5rem;
+  }
+  .insights-divider hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #e8e6e0;
+  }
+  .insights-divider span {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    white-space: nowrap;
+  }
+</style>
+
+  <style>
+    /* --- Project page extras --- */
+    * { 
+    margin: 0;
+    padding: 20;
+    box-sizing: border-box;
+    }
+    .project-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    /* The main finding — pulled out visually */
+    .finding-callout {
+      border-left: 2px solid #1a1a1a;
+      margin: 2rem 0;
+      padding: 0.5rem 0 0.5rem 1.25rem;
+    }
+
+    .finding-callout .finding-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 0.35rem;
+    }
+
+    .finding-callout p {
+      font-size: 1.15rem;
+      font-style: italic;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* Body prose */
+    .project-body h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin: 2.5rem 0 0.6rem;
+    }
+
+    .project-body p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 1.1rem;
+    }
+
+    /* Figure block — image + caption */
+    .figure {
+      margin: 2rem 0;
+    }
+
+    .figure img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #e8e6e0;
+      display: block;
+    }
+
+    .figure figcaption {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 0.5rem;
+      max-width: 560px;
+    }
+
+    /* Two figures side by side (optional) */
+    .figure-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 520px) {
+      .figure-row { grid-template-columns: 1fr; }
+    }
+
+    /* Dataset stats — small inline numbers */
+    .dataset-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 1.25rem 0 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .stat .stat-number {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      display: block;
+    }
+
+    .stat .stat-label {
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+
+<style>
+  .insight-number {
+    color: #999;
+    font-weight: 400;
+  }
+</style>
+
+
+  <style>
+  .setup-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+    margin: 2rem 0 0.6rem;
+  }
+</style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <nav>
+      <a class="site-name" href="index.html">Christos Kourris</a>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="writing.html">Writing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- =====================================================
+      HEADER
+    ===================================================== -->
+    <p class="section-label">Data analysis</p>
+    <h1>Film: Between Art and Industry</h1>
+
+    <div class="project-meta">
+      <span>2026</span>
+      <span>Python · pandas · matplotlib</span>  <!-- EDIT: your stack -->
+      <span><a href="https://github.com/YOUR-USERNAME/REPO" target="_blank" style="border-bottom: 1px solid #ddd;">GitHub ↗</a></span>
+    </div>
+
+    <!-- =====================================================
+      MAIN FINDING — fill this in when you have it.
+      One striking sentence. What will people remember?
+    ===================================================== -->
+    <div class="finding-callout">
+      <p class="finding-label">Money buys reach, not belonging: box-office revenue shows no relationship with how Letterboxd's cinephile community rates or loves a film.</p>
+      <p>
+      </p>
+    </div>
+
+    <!-- =====================================================
+      BODY
+    ===================================================== -->
+    <div class="project-body">
+
+      <p class="setup-heading">Is this a cool project?</p>
+        Letterboxd offers something unusual: a <i>"cinephilic hive buzzing with authentic enthusiasm and heterogeneous tastes"</i>, to quote the <a href="https://www.nytimes.com/interactive/2026/02/03/magazine/letterboxd-film-discussion-site-streaming-movies.html">New York Times</a>. In a platform of passionate film enthusiasts, independent from box-office pressures, weekly column demands from editors, and film-critic quality reviews, what do ratings reflect? Does box-office budget still buy audience devotion, or does Letterboxd's self-selected audience actively decouple from it?
+        <br>
+        This is tale of the tension between art and industry, told through five insights.
+
+      <p class="setup-heading">Datasets</p>
+        > Letterboxd Classification Dataset — ratings, director, and cast data (<a href="https://www.kaggle.com/datasets/sahilislam007/letterbox-movie-classification-dataset">Kaggle</a>) <br>
+        > IMDB Dataset with Budget and Revenue — budget and box office revenue data (<a href="https://www.kaggle.com/datasets/shobhit29075/imdb-movie-database-with-budget-and-revenue">Kaggle</a>)
+      <br>
+        Data cleaning notes and merging methodology are described in detail in the
+        <a href="https://github.com/YOUR-USERNAME/REPO#readme" target="_blank" class="body-link">README ↗</a>. The final 
+        dataset is comprised from 2,369 films, spanning 110 years, and with an average of 93,720 ratings per film.
+      
+      <p class="setup-heading">A note on methodology:</p>
+        <strong>Spearman's rank correlation (ρ)</strong> measures the strength and direction of a <em>monotonic</em>
+        relationship between two variables: from -1 (perfectly decreasing) to +1 (perfectly increasing). The monotonic
+        relation need not be linear and the test operates on the ranks of the data rather than the raw values.
+        <br>
+        The <strong>p-value</strong> that accompanies a test and a Spearman correlation answers the narrower question:
+        <em>if there were truly no effect in the underlying population, how likely would data this
+        extreme be, purely by chance?</em>. A small p-value (conventionally &lt; 0.05) means the observed pattern is
+        unlikely to be due to random sampling noise alone
+        <br>
+        <strong>Kruskal-Wallis test</strong> is used when comparing a numeric variable (e.g. polarization) across
+        three or more independent groups, without assuming the variable is normally distributed within each group.
+        The test tells us whether <em>at least one</em> group differs from the others, without identifying which.
+        <br>
+        <strong>Dunn's post-hoc test</strong> follows, after a significant Kruskal-Wallis result is obtained, to test 
+        each pair of groups individually while correcting for the increased risk of false positives that comes from 
+        running multiple comparisons at once.
+
+      <br>
+      <div class="insights-divider">
+        <span>The Insights</span>
+        <hr>
+      </div>
+      <h2><strong>Insight 1:</strong> How to quantify quality? What's a good metric to use?</h2>
+        The uniqueness of our dataset compels us to think about a unique metric. In Letterboxd, you can do three things when logging a film,
+        <br>
+      <p style="padding-left: 1.25rem; border-left: 2px solid #e8e6e0;">
+        <em>Watch</em> - simply log the film, optionally with a rating.<br>
+        <em>Like</em> - give it a heart.<br>
+        <em>Fan</em> - add it to your all-time Top Four.
+      </p>
+      The <em>fan conversion rate</em> is defined as the ratio of the number of Fans to the total Watches.
+      It correlates strongly with Letterboxd's own crowd-rating, suggesting it captures a related but distinct dimension: 
+      the depth of personal attachment rather than just approval — rather than being random noise.
+      <figure class="figure">
+        <img src="figures/proj_letterboxd/fan_devotion_rating.png" alt="Fan devotion rate" />
+        <figcaption>
+          Within the films with more than 10000 watches, fan devotion increases monotonically with rating. Notice however the growing number of outliers, indicating that the interesting exceptions only really exist among already-well-rated films. The Spearman coefficient is 0.761 with p-value of 0.
+        </figcaption>
+      </figure>
+      The result of Fig. 1 is not surprising, yet it shows that rating raises the ceiling of possible devotion, but doesn't guarantee it. In addition, the highest rating films are not necessarily the ones with higher fan devotion. Within the Top 20/50/100/200, the overlap of the highest average rating and the highest fan conversion rate is consistently close to 50%. Therefore, the two metrics are meaningfully related yet distinct. The remaining that do not overlap, represent two categories: those critically respected films that doesn't lead to an outsized personal devotion, and those personally loved films whose ratings are not as high as the highest rated films.
+      <br><br>
+      In addition, fan conversion rates tend to peak to the earlier decades suggesting that a film becomes a <em>cult classic</em> in time, despite the fact that
+        Watches would skew towards the latest decades, and even despite the possible contemporary positive reception of the film.
+        <figure class="figure">
+        <img src="figures/proj_letterboxd/fan_devotion_rating_per_decade.png" alt="Fan devotion rate" />
+        <figcaption>
+          Cult classics, the films with the higher numbers of fans per watch, tend to be concentrated in the 60-70s era of film production.
+        </figcaption>
+      </figure>
+      <br>
+      What about the extreme ends of the rating list? How do we measure polarization and whether its influence to fan devotion? The dataset includes the number of "★"
+      and "★★★★★" ratings of each film. An arithmetic mean of the percentages of lowest and highest rated films is not an indication of polarizability, but rather
+      it is a measure of the extremeness of the consensus. Divisive films are more accurately captured by a geometric mean of the two percentages. Within the most
+      polarized movies in each way (arithmetic vs geometric), the overlap is 0 for the top 50 and 7 for the top 100. The metric reflects also the fact that genuine polarization is rare (notice the short tail in the plot below).
+
+      <figure class="figure">
+        <img src="figures/proj_letterboxd/polarization_scores.png" alt="Polarization scores" />
+        <figcaption>
+          Within the films with more than 5000 ratings, quantifying polarization through the geometric mean of the number of lowest (★) and the number of highest
+          (★★★★★) ratings is more suitable.
+        </figcaption>
+      </figure>
+      
+      <h2><strong>Insight 2:</strong> The relationship between critical acclaim, fan devotion and polarization</h2>
+      There are films which are not universally acclaimed, yet they have a non-ignorable base of fans that intensely loves them, and there are films which are critically respected, looking at their ratigns, yet they are not universally passionately loved. In the first case, the average rating is dragged down while in the first case it's dragged up.
+      <br>
+        We define three subsets that we want to investigate, within the films with more than 10,000 watches: 
+        <p style="padding-left: 1.25rem; border-left: 2px solid #e8e6e0;">
+          <em>Personal favorites</em> - Films in the Top 100 by fan conversion, but not Top 100 by rating<br>
+          <em>Globally respected</em> - Films in the Top 100 by rating, but not Top 100 by fan conversion<br>
+          <em>Masterpieces</em> - The overlap of the two: Film in Top 100 of both rating and fan conversion
+          </p>
+          <i>Personal favorites</i> have relatively lower ratings but are beloved by a subset of the Letterboxd community while the <i>globally respected</i> have higher ratings but do not have an obsessed community. <br>
+      
+        <b>Does polarization differ across the three film categories?</b> <br>
+        For each group, we look at the geometric-mean polarization score to test whether a film that earns devotion without topping the rating charts is more likely to be genuinely polarizing, and whether a film with a higher rating is more likely to be uniformly well-liked without being polarizing. For a community-driven platform like Letterboxd, this captures a tension between what the community agrees is great and what the individual personally loves.
+        <br><br>
+        A statistical Kruskal-Wallis showed a significant overall difference between the three groups (H = 38.60, p < 0.0001), indicating that at least one group differs in polarization. 
+        <br><br>
+        The findings suggest that personal fan devotion, rather than collective critical agreement, is the primary driver of polarization. Post-hoc comparisons showed that films earning high fan devotion (whether or not they also reach the highest average ratings) show significantly higher polarization than the films valued mainly for global respect (p < 0.0001 for both comparisons that involve the <i>globally respected</i> group). Notably, the <i>personal favourites</i> and the <i>masterpieces</i> did not differ significantly from each other (p=0.61), which suggests that once a film achieves strong personal attachment, reaching the very highest average ratings on top of that does not meaningfully reduce its polarization. On the contrary, it is is the absence of a devoted fanbase - being respected globally but not personally cherished - that is associate with more consensus and less polarization.
+      
+        <figure class="figure">
+        <img src="figures/proj_letterboxd/polarization_by_category.png" alt="Polarization by category" />
+        <figcaption>
+          The  Kruskal-Wallis coefficient is H = 38.600 with p=0. Among the three categories, the <i>personal favorites</i> have a median polarization of 0.0412.
+        </figcaption>
+      </figure>
+      In fact, the result is a direct empirical confirmation of the New York Times characterization from above, identifying the heterogeneous taste that comes about in a platform like Letterboxd. Individual passion doesn't average out into homogeneity, and homogeneity implies broader consensus.
+      </p>
+      
+      <h2><strong>Insight 3:</strong> Is making films profitable? </h2>
+      Let's first have a look at the absolute profit -- Revenue - Budget --  distribution across the dataset. The distribution has a long tail because of the blockbusters which drive the mean to a substantially higher value. Besides the profit, looking at the ROI of the film, we interestingly observe that the top 10% most profitable films (by ROI) are rated on average slightly higher than the overall median (3.65 versus 3.30). On the other hand, the top 10% highest rated films have on average double the ROI of the platform median (451% versus 233%).
+
+      <figure class="figure">
+        <img src="figures/proj_letterboxd/profit_distribution.png" alt="Profit distribution" />
+        <figcaption>
+          The distribution of profits across the dataset. The median is a better estimate of the average profit, given the long tail of the distribution. Some overperformer films, in terms of profit, are identified as outliers.
+        </figcaption>
+      </figure>
+
+      <h2><strong>Insight 4:</strong> Money buys reach but not belonging </h2>
+      We just established a relation between fan devotion and polarization that hints perhaps on the specificity of the community-driven signals being different than a critical positive consensus. Now we test how do the financial dimensions of a film -- what it cost to make (Budget) and what it earned (Revenue) -- are able to influence this system, or whether the Letterboxd community is largely independent of commercial outcome.
+      <br><br>
+      A computation of Spearman correlations across the whole dataset reveals an asymmetry between what money achieves and what it doesn't. Budget and Revenue are both, unsurprisingly, positively associated with a film's reach -- its total number of watches -- possibly reflecting wider releases and greater marketing spend rather than any judgment of quality. However, beyond the reach, the two commercial metrics diverge: Budget shows a weak but statistically significant negative correlation with both fan conversion rate (ρ=-0.23) and average rating (ρ=-0.24), while Revenue shows essentially no relationship with either (ρ≈0.00 and ρ=-0.01, both non-significant). 
+      <br><br>
+      In other words, box-office success predicts how many people watch a film, but not whether they rate it highly or come to love it. Budget shows a similar (yet weaker) positive relationship with reach, but unlike Revenue, it also carries a small negative association with both rating and devotion. Production spend doesn't translate into deeper audience appreciation.
+
+
+        <figure class="figure">
+        <img src="figures/proj_letterboxd/budget_revenue_spearmans.png" alt="Budget/Revenue Spearman" />
+        <figcaption>
+              Budget correlates positively with reach but negatively with fan devotion and approval, while Revenue shows the opposite pattern.
+        </figcaption>
+      </figure>
+
+      <h2><strong>Insight 5:</strong> Horror stands as an outlier </h2>
+      We now look at whether any of the genres sits as an outlier to the rest, or whether or not the conclusions we drew so far are more or less homogeneous across all of them. 9 of 10 genres show a statistically robust negative Budget-Rating relationship (p < 0.01) and negative Budget-Fan Devotion (<i>fan conversion rate</i>) relationship (p < 0.05), indicating a genuinely homogeneous pattern. 
+      <br>
+      Horror stands out as the sole exception: with low correlation and not too high statistical significance, the result suggests that within Horror, budget size has no detectable relationship with how the film is rated or become loved, unlike every other major genre in the dataset. For example, the higher budgeted "World War Z" and "Prometheus" achieve the same ratings as the lower-budget (<$1M) with "Speak No Evil" (2022) and "Hush".
+      <br>
+
+      <div class="figure-row">
+        <figure class="figure" style="margin: 0;">
+          <img src="figures/proj_letterboxd/genre_resolved_budget_rating_spearmans.png" alt="Genre-resolved-rating" />
+          <figcaption>Figure 2a. Budget vs. Rating by genre</figcaption>
+        </figure>
+        <figure class="figure" style="margin: 0;">
+          <img src="figures/proj_letterboxd/genre_resolved_budget_fan_devotion_spearmans.png" alt="Genre-resolved-fan-devotion" />
+          <figcaption>Figure 2b. Budget vs. Fan devotion by genre</figcaption>
+        </figure>
+      </div>
+
+      
+<h2><strong>Takeaways and Limitations</strong></h2>
+  Combining Letterboxd audience data with independently-sourced budget and revenue figures, we tested what makes a film universally admired, a cult classic or a commercial success. The results are interesting because the data is drawn from a self-identifying cinephile community.
+  <br><br>
+  Several limitations are worth being explicit about:
+<ul>
+  <li>
+    <strong>Data is a sample.</strong> This dataset reflects films that happened to survive multiple
+    inner-join merges across three independent sources, each with its own coverage gaps (financial data being
+    sparser for older, foreign, and independent films). The results describe patterns within this specific,
+    non-random sample.
+  </li>
+  <li>
+    <strong>Letterboxd users are not a general audience.</strong> Given the platform hosting many engaged and self-selected cinephiles, the findings here may not generalize to how a broader, more representative moviegoing public relates budget to enjoyment.
+  </li>
+  <li>
+    <strong>Genre mixing</strong> Most films are multi-genre and we selected a "primary genre" semi-randomly. Mixing of genres might be the driver of the correlations that we found. This claim cannot be verified.
+  </li>
+  <li>
+    <strong>Correlation, not causation.</strong> The correlations reported are real and consistent, but our analysis misses genre mixing, marketing strategies, theatrical distributions, language, and other causes that we didn't account for.
+  </li>
+  <li>
+    <strong>Custom metrics are interpretable, not definitive.</strong> <i>Fan conversion rate</i> and <i>geometric-mean polarization score</i> were validated against existing signals
+    </div>
+
+    <!-- Back link -->
+    <p style="margin-top: 3rem; font-family: 'Inter', sans-serif; font-size: 13px;">
+      <a href="projects.html" class="body-link">← All projects</a>
+    </p>
+
+    <footer>
+      <span>ckourris.github.io</span>
+      <span>(Location)</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
